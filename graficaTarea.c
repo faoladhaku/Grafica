@@ -1,4 +1,5 @@
 #include <GL/glut.h> 
+#include <windows.h>
 #include <math.h>
 
 #define CAM_PARALLEL 1 
@@ -311,10 +312,23 @@ void Andar(int x, int y){
   glutPostRedisplay();
 }
 void display(){
-  SetGLCamera( LOCAL_MyCamera ); 
+  glClearColor(0.0f, 0.0f, 0.0f, 1.0f); 
+  glClear(GL_COLOR_BUFFER_BIT);
+  SetGLCamera( LOCAL_MyCamera );
+  
+  glFlush();
 }
 void reshape(int width, int height) {
   glViewport(0, 0, width, height);
   SetGLAspectRatioCamera( LOCAL_MyCamera );
 }
 
+int main(int argc, char** argv){
+  glutInit(&argc, argv);
+  glutCreateWindow("OpenGL Setup Test");
+  glutInitWindowSize(320, 320);
+  glutInitWindowPosition(50, 50);
+  glutDisplayFunc(display);
+  glutMainLoop();
+  return 0;
+}
