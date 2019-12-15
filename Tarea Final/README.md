@@ -1,6 +1,6 @@
 # Creacion de curvas utilizando el algoritmo de Casteljau
 - Codigo
-  * El Algoritmo de Casteljau es programado de la siguiente forma
+  * El Algoritmo de Casteljau es programado de la siguiente forma:
   ```
   void deCas(){
 	double t;
@@ -14,7 +14,7 @@
   }
   ```
 - Resultado 
-![alt text](https://github.com/faoladhaku/Grafica/blob/master/Tarea%20Final/grafica.png)
+![alt text](https://github.com/faoladhaku/Grafica/tree/master/Tarea%20Final/grafica.png)
 
 
 :+1: El codigo ejecuta 
