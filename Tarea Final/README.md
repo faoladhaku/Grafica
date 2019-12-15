@@ -14,7 +14,7 @@
   }
   ```
 -Resultado 
-
+![alt text](https://github.com/faoladhaku/Grafica/edit/master/Tarea%20Final/grafica.PNG)
 
 
 :+1: El codigo ejecuta 
