@@ -1,5 +1,5 @@
-#Creacion de curvas utilizando el algoritmo de Casteljau
--Codigo
+# Creacion de curvas utilizando el algoritmo de Casteljau
+- Codigo
   *El Algoritmo de Casteljau es programado de la siguiente forma
   ```
   void deCas(){
