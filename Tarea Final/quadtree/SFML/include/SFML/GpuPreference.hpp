@@ -22,35 +22,53 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef SFML_AUDIO_HPP
-#define SFML_AUDIO_HPP
+#ifndef SFML_GPUPREFERENCE_HPP
+#define SFML_GPUPREFERENCE_HPP
+
 
 ////////////////////////////////////////////////////////////
-// Headers
+/// Headers
 ////////////////////////////////////////////////////////////
+#include <SFML/Config.hpp>
 
-#include <SFML/System.hpp>
-#include <SFML/Audio/InputSoundFile.hpp>
-#include <SFML/Audio/Listener.hpp>
-#include <SFML/Audio/Music.hpp>
-#include <SFML/Audio/OutputSoundFile.hpp>
-#include <SFML/Audio/Sound.hpp>
-#include <SFML/Audio/SoundBuffer.hpp>
-#include <SFML/Audio/SoundBufferRecorder.hpp>
-#include <SFML/Audio/SoundFileFactory.hpp>
-#include <SFML/Audio/SoundFileReader.hpp>
-#include <SFML/Audio/SoundFileWriter.hpp>
-#include <SFML/Audio/SoundRecorder.hpp>
-#include <SFML/Audio/SoundSource.hpp>
-#include <SFML/Audio/SoundStream.hpp>
-
-
-#endif // SFML_AUDIO_HPP
 
 ////////////////////////////////////////////////////////////
-/// \defgroup audio Audio module
+/// \file
 ///
-/// Sounds, streaming (musics or custom sources), recording,
-/// spatialization.
+/// \brief File containing SFML_DEFINE_DISCRETE_GPU_PREFERENCE
 ///
 ////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////
+/// \def SFML_DEFINE_DISCRETE_GPU_PREFERENCE
+///
+/// \brief A macro to encourage usage of the discrete GPU
+///
+/// In order to inform the Nvidia/AMD driver that an SFML
+/// application could benefit from using the more powerful
+/// discrete GPU, special symbols have to be publicly
+/// exported from the final executable.
+///
+/// SFML defines a helper macro to easily do this.
+///
+/// Place SFML_DEFINE_DISCRETE_GPU_PREFERENCE in the
+/// global scope of a source file that will be linked into
+/// the final executable. Typically it is best to place it
+/// where the main function is also defined.
+///
+////////////////////////////////////////////////////////////
+#if defined(SFML_SYSTEM_WINDOWS)
+
+    #define SFML_DEFINE_DISCRETE_GPU_PREFERENCE \
+                extern "C" __declspec(dllexport) unsigned long NvOptimusEnablement = 1; \
+                extern "C" __declspec(dllexport) unsigned long AmdPowerXpressRequestHighPerformance = 1;
+
+#else
+
+    #define SFML_DEFINE_DISCRETE_GPU_PREFERENCE
+
+#endif
+
+
+#endif // SFML_GPUPREFERENCE_HPP

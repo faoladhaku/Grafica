@@ -22,35 +22,37 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef SFML_AUDIO_HPP
-#define SFML_AUDIO_HPP
+#ifndef SFML_SFML_WINDOW_HPP
+#define SFML_SFML_WINDOW_HPP
 
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
 
 #include <SFML/System.hpp>
-#include <SFML/Audio/InputSoundFile.hpp>
-#include <SFML/Audio/Listener.hpp>
-#include <SFML/Audio/Music.hpp>
-#include <SFML/Audio/OutputSoundFile.hpp>
-#include <SFML/Audio/Sound.hpp>
-#include <SFML/Audio/SoundBuffer.hpp>
-#include <SFML/Audio/SoundBufferRecorder.hpp>
-#include <SFML/Audio/SoundFileFactory.hpp>
-#include <SFML/Audio/SoundFileReader.hpp>
-#include <SFML/Audio/SoundFileWriter.hpp>
-#include <SFML/Audio/SoundRecorder.hpp>
-#include <SFML/Audio/SoundSource.hpp>
-#include <SFML/Audio/SoundStream.hpp>
+#include <SFML/Window/Clipboard.hpp>
+#include <SFML/Window/Context.hpp>
+#include <SFML/Window/ContextSettings.hpp>
+#include <SFML/Window/Cursor.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Joystick.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Mouse.hpp>
+#include <SFML/Window/Sensor.hpp>
+#include <SFML/Window/Touch.hpp>
+#include <SFML/Window/VideoMode.hpp>
+#include <SFML/Window/Window.hpp>
+#include <SFML/Window/WindowHandle.hpp>
+#include <SFML/Window/WindowStyle.hpp>
 
 
-#endif // SFML_AUDIO_HPP
+
+#endif // SFML_SFML_WINDOW_HPP
 
 ////////////////////////////////////////////////////////////
-/// \defgroup audio Audio module
+/// \defgroup window Window module
 ///
-/// Sounds, streaming (musics or custom sources), recording,
-/// spatialization.
+/// Provides OpenGL-based windows, and abstractions for
+/// events and input handling.
 ///
 ////////////////////////////////////////////////////////////

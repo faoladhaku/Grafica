@@ -22,35 +22,32 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef SFML_AUDIO_HPP
-#define SFML_AUDIO_HPP
+#ifndef SFML_NETWORK_HPP
+#define SFML_NETWORK_HPP
 
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
 
 #include <SFML/System.hpp>
-#include <SFML/Audio/InputSoundFile.hpp>
-#include <SFML/Audio/Listener.hpp>
-#include <SFML/Audio/Music.hpp>
-#include <SFML/Audio/OutputSoundFile.hpp>
-#include <SFML/Audio/Sound.hpp>
-#include <SFML/Audio/SoundBuffer.hpp>
-#include <SFML/Audio/SoundBufferRecorder.hpp>
-#include <SFML/Audio/SoundFileFactory.hpp>
-#include <SFML/Audio/SoundFileReader.hpp>
-#include <SFML/Audio/SoundFileWriter.hpp>
-#include <SFML/Audio/SoundRecorder.hpp>
-#include <SFML/Audio/SoundSource.hpp>
-#include <SFML/Audio/SoundStream.hpp>
+#include <SFML/Network/Ftp.hpp>
+#include <SFML/Network/Http.hpp>
+#include <SFML/Network/IpAddress.hpp>
+#include <SFML/Network/Packet.hpp>
+#include <SFML/Network/Socket.hpp>
+#include <SFML/Network/SocketHandle.hpp>
+#include <SFML/Network/SocketSelector.hpp>
+#include <SFML/Network/TcpListener.hpp>
+#include <SFML/Network/TcpSocket.hpp>
+#include <SFML/Network/UdpSocket.hpp>
 
 
-#endif // SFML_AUDIO_HPP
+#endif // SFML_NETWORK_HPP
 
 ////////////////////////////////////////////////////////////
-/// \defgroup audio Audio module
+/// \defgroup network Network module
 ///
-/// Sounds, streaming (musics or custom sources), recording,
-/// spatialization.
+/// Socket-based communication, utilities and higher-level
+/// network protocols (HTTP, FTP).
 ///
 ////////////////////////////////////////////////////////////

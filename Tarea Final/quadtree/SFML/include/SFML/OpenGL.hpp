@@ -22,35 +22,57 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef SFML_AUDIO_HPP
-#define SFML_AUDIO_HPP
+#ifndef SFML_OPENGL_HPP
+#define SFML_OPENGL_HPP
+
 
 ////////////////////////////////////////////////////////////
-// Headers
+/// Headers
 ////////////////////////////////////////////////////////////
+#include <SFML/Config.hpp>
 
-#include <SFML/System.hpp>
-#include <SFML/Audio/InputSoundFile.hpp>
-#include <SFML/Audio/Listener.hpp>
-#include <SFML/Audio/Music.hpp>
-#include <SFML/Audio/OutputSoundFile.hpp>
-#include <SFML/Audio/Sound.hpp>
-#include <SFML/Audio/SoundBuffer.hpp>
-#include <SFML/Audio/SoundBufferRecorder.hpp>
-#include <SFML/Audio/SoundFileFactory.hpp>
-#include <SFML/Audio/SoundFileReader.hpp>
-#include <SFML/Audio/SoundFileWriter.hpp>
-#include <SFML/Audio/SoundRecorder.hpp>
-#include <SFML/Audio/SoundSource.hpp>
-#include <SFML/Audio/SoundStream.hpp>
-
-
-#endif // SFML_AUDIO_HPP
 
 ////////////////////////////////////////////////////////////
-/// \defgroup audio Audio module
-///
-/// Sounds, streaming (musics or custom sources), recording,
-/// spatialization.
-///
+/// This file just includes the OpenGL headers,
+/// which have actually different paths on each system
 ////////////////////////////////////////////////////////////
+#if defined(SFML_SYSTEM_WINDOWS)
+
+    // The Visual C++ version of gl.h uses WINGDIAPI and APIENTRY but doesn't define them
+    #ifdef _MSC_VER
+        #include <windows.h>
+    #endif
+
+    #include <GL/gl.h>
+
+#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+
+    #if defined(SFML_OPENGL_ES)
+        #include <GLES/gl.h>
+        #include <GLES/glext.h>
+    #else
+        #include <GL/gl.h>
+    #endif
+
+#elif defined(SFML_SYSTEM_MACOS)
+
+    #include <OpenGL/gl.h>
+
+#elif defined (SFML_SYSTEM_IOS)
+
+    #include <OpenGLES/ES1/gl.h>
+    #include <OpenGLES/ES1/glext.h>
+
+#elif defined (SFML_SYSTEM_ANDROID)
+
+    #include <GLES/gl.h>
+    #include <GLES/glext.h>
+    
+    // We're not using OpenGL ES 2+ yet, but we can use the sRGB extension
+    #include <GLES2/gl2platform.h>
+    #include <GLES2/gl2ext.h>
+
+#endif
+
+
+#endif // SFML_OPENGL_HPP

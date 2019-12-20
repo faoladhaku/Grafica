@@ -22,35 +22,39 @@
 //
 ////////////////////////////////////////////////////////////
 
-#ifndef SFML_AUDIO_HPP
-#define SFML_AUDIO_HPP
+#ifndef SFML_SYSTEM_HPP
+#define SFML_SYSTEM_HPP
 
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
 
-#include <SFML/System.hpp>
-#include <SFML/Audio/InputSoundFile.hpp>
-#include <SFML/Audio/Listener.hpp>
-#include <SFML/Audio/Music.hpp>
-#include <SFML/Audio/OutputSoundFile.hpp>
-#include <SFML/Audio/Sound.hpp>
-#include <SFML/Audio/SoundBuffer.hpp>
-#include <SFML/Audio/SoundBufferRecorder.hpp>
-#include <SFML/Audio/SoundFileFactory.hpp>
-#include <SFML/Audio/SoundFileReader.hpp>
-#include <SFML/Audio/SoundFileWriter.hpp>
-#include <SFML/Audio/SoundRecorder.hpp>
-#include <SFML/Audio/SoundSource.hpp>
-#include <SFML/Audio/SoundStream.hpp>
+#include <SFML/Config.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Err.hpp>
+#include <SFML/System/FileInputStream.hpp>
+#include <SFML/System/InputStream.hpp>
+#include <SFML/System/Lock.hpp>
+#include <SFML/System/MemoryInputStream.hpp>
+#include <SFML/System/Mutex.hpp>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Sleep.hpp>
+#include <SFML/System/String.hpp>
+#include <SFML/System/Thread.hpp>
+#include <SFML/System/ThreadLocal.hpp>
+#include <SFML/System/ThreadLocalPtr.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Utf.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector3.hpp>
 
-
-#endif // SFML_AUDIO_HPP
+#endif // SFML_SYSTEM_HPP
 
 ////////////////////////////////////////////////////////////
-/// \defgroup audio Audio module
+/// \defgroup system System module
 ///
-/// Sounds, streaming (musics or custom sources), recording,
-/// spatialization.
+/// Base module of SFML, defining various utilities. It provides
+/// vector classes, Unicode strings and conversion functions,
+/// threads and mutexes, timing classes.
 ///
 ////////////////////////////////////////////////////////////
